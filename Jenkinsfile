@@ -7,11 +7,11 @@ pipeline {
     agent any
     stages {
 
-        stage('Git stage'){
+        stage('Git dev'){
 
             steps{
 
-                checkout([$class: 'GitSCM', branches: [[name: '*/stage']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub-Actions', url: 'https://github.com/hariharan-k21/Jenkins-Multistage-CICD.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub-Actions', url: 'https://github.com/hariharan-k21/Jenkins-Multistage-CICD.git']]])
 
             }
         }
